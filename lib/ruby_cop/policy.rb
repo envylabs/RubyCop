@@ -1,6 +1,8 @@
 require 'set'
 
 module RubyCop
+  # Visitor class for Ruby::Node subclasses. Determines whether the node is
+  # safe according to our rules.
   class Policy
     def initialize
       @const_list = GrayList.new
