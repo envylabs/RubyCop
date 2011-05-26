@@ -1,4 +1,4 @@
-require 'ruby_cop/ruby/node'         
+require 'ruby_cop/ruby/node'
 require 'ruby_cop/ruby/list'
 require 'ruby_cop/ruby/array'
 require 'ruby_cop/ruby/args'
