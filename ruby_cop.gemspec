@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Dray Lacy", "Eric Allam"]
   s.email       = ["dray@envylabs.com", "eric@envylabs.com"]
   s.homepage    = ""
-  s.summary     = %q{Statically analyze Ruby and polic any nefarious code}
-  s.description = %q{Statically analyze Ruby and polic any nefarious code}
+  s.summary     = %q{Statically analyze Ruby and neutralize nefarious code}
+  s.description = %q{Statically analyze Ruby and neutralize nefarious code}
 
   s.rubyforge_project = "ruby_cop"
 
