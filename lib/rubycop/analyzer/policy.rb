@@ -88,6 +88,7 @@ module Rubycop
         readlines
         redo
         remove_const
+        retry
         require
         send
         set_trace_func

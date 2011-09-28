@@ -57,6 +57,8 @@ describe Rubycop::Analyzer::Policy do
     it { should_not allow('`ls` rescue 1') }
     it { should_not allow('x rescue `ls`') }
     it { should_not allow('begin; x; rescue (`ls`; RuntimeError) => err; end') }
+    it { should_not allow(%{begin ; begin ; ":D" ; rescue ; retry ; ensure ; raise ":D" ; end ; rescue ; retry ; end})}
+    it { should_not allow(%{begin ; while(true) ; 'x' ; end ; rescue Exception ; retry ; end}) }
   end
 
   context "blocks" do
@@ -136,6 +138,8 @@ describe Rubycop::Analyzer::Policy do
       it { should_not allow('trap("EXIT") { }') }
       it { should_not allow('undef :raise') }
       it { should_not allow('undef raise') }
+      it { should_not allow('GC.disable') }
+      it { should_not allow('ObjectSpace.each_object(&:freeze)') }
     end
   end
 
