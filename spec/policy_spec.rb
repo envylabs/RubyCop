@@ -138,8 +138,7 @@ describe Rubycop::Analyzer::Policy do
       it { should_not allow('trap("EXIT") { }') }
       it { should_not allow('undef :raise') }
       it { should_not allow('undef raise') }
-      it { should_not allow('GC.disable') }
-      it { should_not allow('ObjectSpace.each_object(&:freeze)') }
+      it { should_not allow(%{''.dup})}
     end
   end
 

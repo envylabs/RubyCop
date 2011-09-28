@@ -74,6 +74,7 @@ module Rubycop
         eval
         exec
         exit
+        dup
         fail
         fork
         gets
