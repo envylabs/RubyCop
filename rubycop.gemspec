@@ -5,11 +5,11 @@ require "rubycop/version"
 Gem::Specification.new do |s|
   s.name        = "rubycop"
   s.version     = Rubycop::VERSION
-  s.authors     = ["Eric Allam"]
-  s.email       = ["rubymaverick@gmail.com"]
+  s.authors     = ["Dray Lacy", "Eric Allam"]
+  s.email       = ["dray@envylabs.com", "rubymaverick@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{A semantic analyzer for Ruby 1.9}
+  s.description = %q{A semantic analyzer for Ruby 1.9}
 
   s.rubyforge_project = "rubycop"
 
