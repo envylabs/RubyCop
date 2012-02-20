@@ -205,6 +205,7 @@ describe RubyCop::Policy do
     it { should allow('true') }
     it { should allow('[]') }
     it { should allow('[1,2,3]') }
+    it { should allow('%w[ a b c ]') }
     it { should allow('{}') }
     it { should allow('{1 => 2}') }
   end

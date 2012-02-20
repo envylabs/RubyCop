@@ -4,6 +4,10 @@ module RubyCop
       # def inspect
       #   '[%s]' % @elements.collect { |e| e.inspect }.join(', ')
       # end
+
+      def to_array
+        self
+      end
     end
   end
 end
