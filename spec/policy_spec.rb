@@ -1,11 +1,11 @@
-require 'rubycop'
+require 'ruby_cop'
 
-describe Rubycop::Analyzer::Policy do
+describe RubyCop::Policy do
   let(:policy) { described_class.new }
   subject { policy }
 
   RSpec::Matchers.define(:allow) do |ruby|
-    match { |policy| Rubycop::Analyzer::NodeBuilder.build(ruby).accept(policy) }
+    match { |policy| RubyCop::NodeBuilder.build(ruby).accept(policy) }
   end
 
   context "assignment" do
@@ -293,7 +293,7 @@ describe Rubycop::Analyzer::Policy do
       "Zodfsdsfdsdfsz=Zombies.find()1\n"
     ].each do |error|
       it "raises SyntaxError on #{error.inspect}" do
-        expect { Rubycop::Analyzer::NodeBuilder.build(error) }.to raise_error(SyntaxError)
+        expect { RubyCop::NodeBuilder.build(error) }.to raise_error(SyntaxError)
       end
     end
 

@@ -72,6 +72,7 @@ module RubyCop
       class_eval
       const_get
       const_set
+      dup
       eval
       exec
       exit
@@ -90,6 +91,7 @@ module RubyCop
       redo
       remove_const
       require
+      retry
       send
       set_trace_func
       sleep

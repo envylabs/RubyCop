@@ -57,6 +57,8 @@ describe RubyCop::Policy do
     it { should_not allow('`ls` rescue 1') }
     it { should_not allow('x rescue `ls`') }
     it { should_not allow('begin; x; rescue (`ls`; RuntimeError) => err; end') }
+    it { should_not allow(%{begin ; begin ; ":D" ; rescue ; retry ; ensure ; raise ":D" ; end ; rescue ; retry ; end})}
+    it { should_not allow(%{begin ; while(true) ; 'x' ; end ; rescue Exception ; retry ; end}) }
   end
 
   context "blocks" do
@@ -74,6 +76,7 @@ describe RubyCop::Policy do
       # This is a tricky case where we want to allow methods like
       # Enumerable#select, but not Kernel#select / IO#select.
       it { should allow('[1, 2, 3].select { |x| x.odd? }') }
+      it { should_not allow('select([$stdin], nil, nil, 1.5)') }
       it { pending('Kernel#select') { should_not allow('select([$stdin], nil, nil, 1.5)') } }
 
       # TODO: these are a possible concern because symbols are not GC'ed and
@@ -136,6 +139,7 @@ describe RubyCop::Policy do
       it { should_not allow('trap("EXIT") { }') }
       it { should_not allow('undef :raise') }
       it { should_not allow('undef raise') }
+      it { should_not allow(%{''.dup}) }
     end
   end
 
