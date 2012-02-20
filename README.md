@@ -1,5 +1,4 @@
 RubyCop
-=======
 
 RubyCop scans Ruby code and tells you whether it's safe or not. We use
 it at [CodeSchool][1] to check user-submitted code before we eval it on
