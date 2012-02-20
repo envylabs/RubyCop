@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Dray Lacy", "Eric Allam"]
   s.email       = ["dray@envylabs.com", "eric@envylabs.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/envylabs/RubyCop"
   s.summary     = %q{Statically analyze Ruby and neutralize nefarious code}
   s.description = %q{Statically analyze Ruby and neutralize nefarious code}
 
