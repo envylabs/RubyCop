@@ -448,6 +448,8 @@ module RubyCop
       ref
     end
 
+    alias on_vcall on_var_ref
+
     def on_void_stmt
       nil
     end

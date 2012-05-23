@@ -77,7 +77,6 @@ describe RubyCop::Policy do
       # Enumerable#select, but not Kernel#select / IO#select.
       it { should allow('[1, 2, 3].select { |x| x.odd? }') }
       it { should_not allow('select([$stdin], nil, nil, 1.5)') }
-      it { pending('Kernel#select') { should_not allow('select([$stdin], nil, nil, 1.5)') } }
 
       # TODO: these are a possible concern because symbols are not GC'ed and
       # an attacker could create a large number of them to eat up memory. If
