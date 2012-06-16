@@ -85,6 +85,7 @@ describe RubyCop::Policy do
       it { should allow('"abc".intern') }
       it { should allow('"abc".to_sym') }
 
+      it { should_not allow('__send__(:eval, "`ls`")') }
       it { should_not allow('abort("fail")') }
       it { should_not allow('alias :foo :bar') }
       it { should_not allow('alias foo bar') }
@@ -119,6 +120,7 @@ describe RubyCop::Policy do
       it { should_not allow('method(:eval)') }
       it { should_not allow('module_eval("`ls`")') }
       it { should_not allow('open("/etc/passwd")') }
+      it { should_not allow('public_send(:eval, "`ls`")') }
       it { should_not allow('readline') }
       it { should_not allow('readline()') }
       it { should_not allow('readlines') }

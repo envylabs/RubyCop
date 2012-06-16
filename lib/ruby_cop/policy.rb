@@ -62,6 +62,7 @@ module RubyCop
     end
 
     CALL_BLACKLIST = %w[
+      __send__
       abort
       alias_method
       at_exit
@@ -86,6 +87,7 @@ module RubyCop
       method
       module_eval
       open
+      public_send
       readline
       readlines
       redo
