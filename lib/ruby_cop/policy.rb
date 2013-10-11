@@ -80,6 +80,7 @@ module RubyCop
       fail
       fork
       gets
+      gem
       global_variables
       instance_eval
       load
