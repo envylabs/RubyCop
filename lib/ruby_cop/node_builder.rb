@@ -290,8 +290,9 @@ module RubyCop
       lvalue.assignment(rvalue, operator)
     end
 
-    def on_params(params, optionals, rest, something, block)
-      Ruby::Params.new(params, optionals, rest, block)
+    def on_params(*args)
+      args = args[0 ... 3] + args[4 .. -1] # the fourth argument, "something", is not important
+      Ruby::Params.new(*args)
     end
 
     def on_paren(node)
